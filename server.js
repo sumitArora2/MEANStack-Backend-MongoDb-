@@ -16,8 +16,14 @@ app.use(
 
 var Users = require('./routes/users')
 var Colleges = require('./routes/colleges');
+
+// Mongodb Config
+mongoose.set('useCreateIndex', true);
+
+
 //connected to database
-mongoose.connect(config.database);
+mongoose.connect(config.database, {useNewUrlParser: true, useUnifiedTopology: true});
+
 //checking the  database connected 
 mongoose.connection.on('connected', () => {
   console.log('Connected to the database mongodb @27017');

@@ -96,7 +96,8 @@ module.exports = {
                 email: user.email,
                 first_name: user.first_name,
                 last_name: user.last_name,
-                college_name: user.college_name
+                college_name: user.college_name,
+                role: user.role
               }
             }, config.secret, {
               expiresIn: 604800 // for 1 week time in milliseconds
